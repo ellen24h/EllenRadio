@@ -1,0 +1,52 @@
+{
+  "name": "ellenradio",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "author": "Ellen Seon <ellen24h@gmail.com>",
+  "dependencies": {
+    "angular": "1.4.5",
+    "angular-mocks": "1.4.5",
+    "angular-resource": "1.4.5",
+    "async": "1.3.0",
+    "body-parser": "^1.13.3",
+    "compression": "1.5.1",
+    "connect-flash": "0.1.1",
+    "connect-mongo": "0.8.1",
+    "cookie-parser": "~1.3.5",
+    "cookie-session": "1.2.0",
+    "csurf": "1.8.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "express-session": "1.11.3",
+    "forever": "0.14.2",
+    "imager": "0.2.7",
+    "jade": "~1.11.0",
+    "jasmine-core": "^2.3.4",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "method-override": "^2.3.3",
+    "mongoose": "^4.0.6",
+    "morgan": "~1.6.1",
+    "multer": "0.1.8",
+    "notifier": "0.1.7",
+    "passport": "0.2.2",
+    "passport-facebook": "2.0.0",
+    "passport-google-oauth": "0.2.0",
+    "passport-local": "1.0.0",
+    "passport-twitter": "1.0.3",
+    "sentiment": "^1.0.2",
+    "serve-favicon": "~2.3.0",
+    "swig": "1.4.2",
+    "view-helpers": "0.1.5",
+    "winston": "1.0.1"
+  },
+  "devDependencies": {
+    "supertest": "1.0.1",
+    "should": "7.0.1",
+    "mocha": "2.2.5",
+    "nodemon": "1.3.7"
+  }
+}
