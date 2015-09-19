@@ -1,12 +1,10 @@
 /**
  * Created by Ellen Seon
  */
-app.directive('sentimentInput', [ function() {
+angular.module('sentimentModule', [])
+    .directive('sentimentInput', [ function() {
     return {
         restrict: 'E',
-        scope: {
-            info: '='
-        },
-        templateUrl: 'sentimentInput.html'
+        templateUrl: 'javascripts/directives/sentimentInput.html'
     };
 }]);

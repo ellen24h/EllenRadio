@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .center-block{
   background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0.1;
   padding-top: 5em;
   padding-bottom: 5em;
   position: fixed;
@@ -38,6 +39,10 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   display: block;
   -webkit-transform: translate(-50%,-50%);
+}
+
+.center-block:hover{
+  opacity: 1;
 }
 
 h1 {
