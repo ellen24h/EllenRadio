@@ -6,6 +6,7 @@ var config = require('config');
 
 var SentimentSchema = new mongoose.Schema({
     contents: {type : String, default : '', trim : true},
+
     createdAt: {type : Date, default : Date.now}
 });
 

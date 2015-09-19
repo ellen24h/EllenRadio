@@ -1,7 +1,42 @@
 <h1> {{ appname }}</h1>
-<p class = "question"> {{ question }} </p>
-<span ng-show="" class = "sentiment_status" > {{ status }} </span>
-<form name = "sentiment_input" ng-submit="sentimentInput()">
+<p class = "question"> {{ question1 }} </p>
+<form method = "POST" name = "sentiment_input" ng-submit="sentimentInput()" >
+    <input class = "sentiment_input"
+           name = "impressive"
+           type="text"
+           ng-pattern="[a-zA-Z]"
+           ng-model="impressive"
+           ng-minlength="10"
+           ng-maxlength="50"
+           placeholder="ex) Kevis said he loves me!"
+           onfocus="this.placeholder=''"
+           onblur="this.placeholder = ''"
+           required />
+    <div class = "pristine" ng-show="sentiment_input.impressive.$pristine">
+        <span class = "pristine">I am all ears!</span>
+    </div>
+    <div class = "error"
+         ng-show="sentiment_input.sentiment.$dirty && sentiment_input.impressive.$invalid">
+                <span class = "error"
+                      ng-show= "sentiment_input.impressive.$error.required">
+                    I want to hear you :)
+                </span>
+        <!--minlength check가 안된다. 정말 도무지 이유를 모르겠다. -->
+                <span class = "error"
+                      ng-show= "sentiment_input.sentiment.$error.minlength">
+                    Tell me more :)
+                </span>
+                <span class= "error"
+                      ng-show="sentiment_input.sentiment.$error.pattern">
+                    I can't understand mathematics :(
+                </span>
+    </div>
+    <div class = "valid">
+                <span class = "valid" ng-show="sentiment_input.impressive.$valid">
+                    Wow! That's so impressive!
+                </span>
+    </div>
+    <p class = "question"> {{ question2 }} </p>
     <input class = "sentiment_input"
            name = "sentiment"
            type="text"
@@ -9,30 +44,33 @@
            ng-model="sentiment"
            ng-minlength="10"
            ng-maxlength="50"
+           placeholder="ex) I am very happy!"
+           onfocus="this.placeholder=''"
+           onblur="this.placeholder = ''"
            required />
     <div class = "pristine" ng-show="sentiment_input.sentiment.$pristine">
-        <span class = "pristine">Tell me how you feel :)</span>
+        <span class = "pristine">I am curious!</span>
     </div>
     <div class = "error"
          ng-show="sentiment_input.sentiment.$dirty && sentiment_input.sentiment.$invalid">
-                        <span class = "error"
-                              ng-show= "sentiment_input.sentiment.$error.required">
-                            I want to hear you :)
-                        </span>
+                <span class = "error"
+                      ng-show= "sentiment_input.sentiment.$error.required">
+                    I want to hear you :)
+                </span>
         <!--minlength check가 안된다. 정말 도무지 이유를 모르겠다. -->
-                        <span class = "error"
-                              ng-show= "sentiment_input.sentiment.$error.minlength">
-                            Tell me more :)
-                        </span>
-                        <span class= "error"
-                              ng-show="sentiment_input.sentiment.$error.pattern">
-                            I can't understand mathematics :(
-                        </span>
+                <span class = "error"
+                      ng-show= "sentiment_input.sentiment.$error.minlength">
+                    Tell me more :)
+                </span>
+                <span class= "error"
+                      ng-show="sentiment_input.sentiment.$error.pattern">
+                    I can't understand mathematics :(
+                </span>
     </div>
     <div class = "valid">
-                        <span class = "valid" ng-show="sentiment_input.sentiment.$valid">
-                            Thanks. Can I remember it?
-                        </span>
+                <span class = "valid" ng-show="sentiment_input.sentiment.$valid">
+                    Thanks. Can I remember it?
+                </span>
     </div>
     <input class = "sentiment_submit"
            ng-disabled="sentiment_input.sentiment.$invalid"

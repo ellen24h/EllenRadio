@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .center-block{
   background-color: rgba(0, 0, 0, 0.3);
-  opacity: 0.1;
+  opacity: 0.15;
   padding-top: 5em;
   padding-bottom: 5em;
   position: fixed;
@@ -46,12 +46,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 7em; /* 80px; */
+  font-size: 5em; /* 80px; */
   line-height: 1em; /* 80px; */
 }
 
 .question {
-  font-size: 4em;
+  font-size: 1.5em;
   line-height: 1em;
   margin: 0.3em;
   color: paleturquoise;
@@ -62,11 +62,11 @@ h1 {
   border-left: none;
   border-right: none;
   border-bottom-color: paleturquoise;
-  border-bottom-width: 2px;
-  width: 10em;
+  border-bottom-width: 1px;
+  width: 20em;
   background-color: transparent;
   color: white;
-  font-size: 3em;
+  font-size: 1.5em;
   cursor: auto;
   text-rendering: auto;
 }
@@ -78,7 +78,7 @@ h1 {
   background-color: transparent;
   border: 3px solid #0b97c4;
   /*border-radius: 20px;*/
-  font-size: 2em;
+  font-size: 1.5em;
   cursor: pointer;
   width: 7em;
   color: #0b97c4;
@@ -86,7 +86,7 @@ h1 {
 }
 
 span {
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .error {
