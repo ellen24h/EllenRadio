@@ -2,6 +2,10 @@ html {
   font-size: 1em;
 }
 
+body {
+  background-color: black;
+}
+
 video#bgvid {
   position: fixed;
   top: 50%;
@@ -22,13 +26,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .center-block{
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding-top: 5em;
+  padding-bottom: 5em;
   position: fixed;
-  max-width: auto;
-  min-width: auto;
+  width: 50%;
   top: 50%;
   left: 50%;
-  width: 100%;
   color: skyblue;
   vertical-align: middle;
   text-align: center;
@@ -37,14 +41,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 10em; /* 80px; */
+  font-size: 7em; /* 80px; */
   line-height: 1em; /* 80px; */
 }
 
 .question {
-  font-size: 5em;
+  font-size: 4em;
   line-height: 1em;
   margin: 0.3em;
+  color: paleturquoise;
 }
 
 .sentiment_input {
@@ -53,22 +58,40 @@ h1 {
   border-right: none;
   border-bottom-color: paleturquoise;
   border-bottom-width: 2px;
+  width: 10em;
   background-color: transparent;
-  color: skyblue;
+  color: white;
   font-size: 3em;
   cursor: auto;
   text-rendering: auto;
 }
 
 .sentiment_submit {
+  margin-top: 1em;
+  opacity: 1;
   margin-left: 0.5em;
   background-color: transparent;
-  border: 3px solid skyblue;
-  border-radius: 20px;
+  border: 3px solid #0b97c4;
+  /*border-radius: 20px;*/
   font-size: 2em;
   cursor: pointer;
-  width: 5em;
-  color: skyblue;
+  width: 7em;
+  color: #0b97c4;
   padding: none;
 }
 
+span {
+  font-size: 2em;
+}
+
+.error {
+  color : red;
+}
+
+.valid {
+  color: green;
+}
+
+.pristine {
+  color: deepskyblue;
+}

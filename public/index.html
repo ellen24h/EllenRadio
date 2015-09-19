@@ -5,7 +5,6 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
         <title>ULIVEARTH : YOU LIVE EARTH : UNIVERSE</title>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="controller.js"> </script>
     </head>
     <body>
         <video autoplay loop poster="resources/ulivearth.png" id="bgvid">
@@ -17,14 +16,54 @@
         </div>
         <div class = "center-container">
             <div class="center-block">
-                <h1>ULIVEARTH</h1>
+                <sentiment-input></sentiment-input>
+                <h1> {{ appname }}</h1>
                 <p class = "question"> {{ question }} </p>
-                <p ng-show="false" class = "sentiment_status" > {{ status }} </p>
-                <form action="">
-                    <input class = "sentiment_input" type="text" ng-model = "sentiment"/>
-                    <input class = "sentiment_submit" type="submit" value="send"/>
+                <span ng-show="" class = "sentiment_status" > {{ status }} </span>
+                <form name = "sentiment_input" ng-submit="sentimentInput()">
+                    <input class = "sentiment_input"
+                           name = "sentiment"
+                           type="text"
+                           ng-pattern="[a-zA-Z]"
+                           ng-model="sentiment"
+                           ng-minlength="10"
+                           ng-maxlength="50"
+                           required />
+                    <div class = "pristine" ng-show="sentiment_input.sentiment.$pristine">
+                        <span class = "pristine">Tell me how you feel :)</span>
+                    </div>
+                    <div class = "error"
+                         ng-show="sentiment_input.sentiment.$dirty && sentiment_input.sentiment.$invalid">
+                        <span class = "error"
+                               ng-show= "sentiment_input.sentiment.$error.required">
+                            I want to hear you :)
+                        </span>
+                        <!--minlength check가 안된다. 정말 도무지 이유를 모르겠다. -->
+                        <span class = "error"
+                               ng-show= "sentiment_input.sentiment.$error.minlength">
+                            Tell me more :)
+                        </span>
+                        <span class= "error"
+                                ng-show="sentiment_input.sentiment.$error.pattern">
+                            I can't understand mathematics :(
+                        </span>
+                    </div>
+                    <div class = "valid">
+                        <span class = "valid" ng-show="sentiment_input.sentiment.$valid">
+                            Thanks. Can I remember it?
+                        </span>
+                    </div>
+                    <input class = "sentiment_submit"
+                           ng-disabled="sentiment_input.sentiment.$invalid"
+                           type="submit" value="remember"/>
                 </form>
             </div>
         </div>
+
+        <!-- Modules-->
+        <!-- Controllers -->
+        <script type="text/javascript" charset="UTF-8" src="/javascripts/controllers/MainController.js"></script>
+        <!-- Directives -->
+        <script type="text/javascript" charset="UTF-8" src="/javascripts/directives/sentimentInput.js"></script>
     </body>
 </html>

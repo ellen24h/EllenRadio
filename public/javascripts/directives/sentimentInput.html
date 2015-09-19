@@ -1,0 +1,40 @@
+<h1> {{ appname }}</h1>
+<p class = "question"> {{ question }} </p>
+<span ng-show="" class = "sentiment_status" > {{ status }} </span>
+<form name = "sentiment_input" ng-submit="sentimentInput()">
+    <input class = "sentiment_input"
+           name = "sentiment"
+           type="text"
+           ng-pattern="[a-zA-Z]"
+           ng-model="sentiment"
+           ng-minlength="10"
+           ng-maxlength="50"
+           required />
+    <div class = "pristine" ng-show="sentiment_input.sentiment.$pristine">
+        <span class = "pristine">Tell me how you feel :)</span>
+    </div>
+    <div class = "error"
+         ng-show="sentiment_input.sentiment.$dirty && sentiment_input.sentiment.$invalid">
+                        <span class = "error"
+                              ng-show= "sentiment_input.sentiment.$error.required">
+                            I want to hear you :)
+                        </span>
+        <!--minlength check가 안된다. 정말 도무지 이유를 모르겠다. -->
+                        <span class = "error"
+                              ng-show= "sentiment_input.sentiment.$error.minlength">
+                            Tell me more :)
+                        </span>
+                        <span class= "error"
+                              ng-show="sentiment_input.sentiment.$error.pattern">
+                            I can't understand mathematics :(
+                        </span>
+    </div>
+    <div class = "valid">
+                        <span class = "valid" ng-show="sentiment_input.sentiment.$valid">
+                            Thanks. Can I remember it?
+                        </span>
+    </div>
+    <input class = "sentiment_submit"
+           ng-disabled="sentiment_input.sentiment.$invalid"
+           type="submit" value="remember"/>
+</form>
