@@ -37,6 +37,7 @@
     "passport-google-oauth": "0.2.0",
     "passport-local": "1.0.0",
     "passport-twitter": "1.0.3",
+    "redis": "^1.0.0",
     "sentiment": "^1.0.2",
     "serve-favicon": "~2.3.0",
     "swig": "1.4.2",

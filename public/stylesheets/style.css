@@ -1,10 +1,7 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html {
+  font-size: 1em;
 }
-a {
-  color: #00B7FF;
-}
+
 video#bgvid {
   position: fixed;
   top: 50%;
@@ -19,3 +16,59 @@ video#bgvid {
   background: url(ulivearth.png) no-repeat;
   background-size: cover;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.center-block{
+  background-color: transparent;
+  position: fixed;
+  max-width: auto;
+  min-width: auto;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  color: skyblue;
+  vertical-align: middle;
+  text-align: center;
+  display: block;
+  -webkit-transform: translate(-50%,-50%);
+}
+
+h1 {
+  font-size: 10em; /* 80px; */
+  line-height: 1em; /* 80px; */
+}
+
+.question {
+  font-size: 5em;
+  line-height: 1em;
+  margin: 0.3em;
+}
+
+.sentiment_input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: paleturquoise;
+  border-bottom-width: 2px;
+  background-color: transparent;
+  color: skyblue;
+  font-size: 3em;
+  cursor: auto;
+  text-rendering: auto;
+}
+
+.sentiment_submit {
+  margin-left: 0.5em;
+  background-color: transparent;
+  border: 3px solid skyblue;
+  border-radius: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  width: 5em;
+  color: skyblue;
+  padding: none;
+}
+

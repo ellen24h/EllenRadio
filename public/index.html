@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app ng-controller = "UlivearthController">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <title>ULIVEARTH : YOU LIVE EARTH : UNIVERSE</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="controller.js"> </script>
+    </head>
+    <body>
+        <video autoplay loop poster="resources/ulivearth.png" id="bgvid">
+            <source src=" resources/ulivearth.mp4" type="video/mp4">
+        </video>
+        <div style="visibility:hidden; position:fixed;">
+            <iframe scrolling="no" frameborder="no"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/144427195&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        </div>
+        <div class = "center-container">
+            <div class="center-block">
+                <h1>ULIVEARTH</h1>
+                <p class = "question"> {{ question }} </p>
+                <p ng-show="false" class = "sentiment_status" > {{ status }} </p>
+                <form action="">
+                    <input class = "sentiment_input" type="text" ng-model = "sentiment"/>
+                    <input class = "sentiment_submit" type="submit" value="send"/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
