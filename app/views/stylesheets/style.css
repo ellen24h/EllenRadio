@@ -69,6 +69,7 @@ h1 {
   font-size: 1.5em;
   cursor: auto;
   text-rendering: auto;
+  text-align: center;
 }
 
 .sentiment_submit {
@@ -98,5 +99,5 @@ span {
 }
 
 .pristine {
-  color: deepskyblue;
+  color: ghostwhite;
 }

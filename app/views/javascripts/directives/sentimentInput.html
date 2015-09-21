@@ -1,6 +1,6 @@
 <h1> {{ appname }}</h1>
 <p class = "question"> {{ question1 }} </p>
-<form method = "POST" name = "sentiment_input" ng-submit="sentimentInput()" >
+<form method = "POST" action = "/sentiment" name="sentiment_input">
     <input class = "sentiment_input"
            name = "impressive"
            type="text"
@@ -19,15 +19,15 @@
          ng-show="sentiment_input.sentiment.$dirty && sentiment_input.impressive.$invalid">
                 <span class = "error"
                       ng-show= "sentiment_input.impressive.$error.required">
-                    I want to hear you :)
+                    Think about it :)
                 </span>
         <!--minlength check가 안된다. 정말 도무지 이유를 모르겠다. -->
                 <span class = "error"
-                      ng-show= "sentiment_input.sentiment.$error.minlength">
+                      ng-show= "sentiment_input.impressive.$error.minlength">
                     Tell me more :)
                 </span>
                 <span class= "error"
-                      ng-show="sentiment_input.sentiment.$error.pattern">
+                      ng-show="sentiment_input.impressive.$error.pattern">
                     I can't understand mathematics :(
                 </span>
     </div>

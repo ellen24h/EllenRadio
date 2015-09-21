@@ -1,3 +1,6 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/ellenradio');
+var autoIncrement = require('mongoose-auto-increment');
+
+var db = mongoose.connect('mongodb://localhost/ellenradiodb');
+autoIncrement.initialize(db);
 
