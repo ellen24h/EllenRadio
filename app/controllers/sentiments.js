@@ -13,15 +13,15 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var sentiments = require('../controllers/sentiments');
 
-router.use(bodyParser.urlencoded({ extended: true }))
-router.use(methodOverride(function(req, res){
-    if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-        // look in urlencoded POST bodies and delete it
-        var method = req.body._method;
-        delete req.body._method;
-        return method;
-    }
-}))
+//router.use(bodyParser.urlencoded({ extended: true }))
+//router.use(methodOverride(function(req, res){
+//    if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+//        // look in urlencoded POST bodies and delete it
+//        var method = req.body._method;
+//        delete req.body._method;
+//        return method;
+//    }
+//}))
 
 
 // Error handler
@@ -58,7 +58,7 @@ exports.create = function(req, res) {
             console.log('created new sentiment analysis');
             res.format({
                 html: function() {
-                    res.redirect("/");
+                    res.redirect("/#/analysis");
                 },
                 json: function() {
                     res.json(sentiment);
@@ -68,6 +68,18 @@ exports.create = function(req, res) {
     })
 }
 
+exports.list = function(req, res) {
+    Sentiment.find().sort('-' +
+        'created').exec(function(err, articles) {
+        if (err) {
+            return res.status(400).send({
+                message: getErrorMessage(err)
+            });
+        } else {
+            res.json(articles);
+        }
+    });
+};
 
 //
 //router.route('/').post(function(req, res) {

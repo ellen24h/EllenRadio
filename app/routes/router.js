@@ -27,9 +27,15 @@ module.exports = function (app) {
             //console.log("router"); for bug잡기....ㅠㅠ 여기에 몇시간을 썼는지 모르겠다...
             res.render('index.html');
         });
+
     app.route('/sentiment')
         .post(function (req, res, next) {
-            sentiments.create(req, res)
+            sentiments.create(req, res);
         });
+
+    app.route('/sentimentValues')
+        .get(function (req, res) {
+            sentiments.list(req, res);
+        })
 }
 
