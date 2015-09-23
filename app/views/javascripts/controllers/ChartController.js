@@ -1,23 +1,37 @@
 /**
  * Created by Ellen
  */
+//TODO: 방어코드 만들기!
 app.controller('ChartController', ['$scope', 'sentimentValues', function ($scope, sentimentValues) {
     sentimentValues.success(function (data) {
         var recentData = [];
-        var SentimentValues = [];
-        recentData = data.reverse().slice(0, 7);
-        console.log(recentData);
-        console.log(recentData[0].sentimentValue);
-        for (var i = 0 ; i < 7 ; i ++) {
-            var value = recentData[i].sentimentValue;
-            SentimentValues.push(value);
+        var SentimentValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        recentData = data.reverse().slice(0, 10);
+
+        if (recentData.length < 10) {
+            for (var i = 0 ; i < recentData.length ; i ++) {
+                var value = recentData[i].sentimentValue;
+                SentimentValues[i] = value;
+            }
         }
-        $scope.labels = ["7dayago", "6dayago", "5dayago", "4dayago", "3dayago", "2dayago", "1dayago"];
+
+        else {
+            for (var i = 0 ; i < 10 ; i ++) {
+                var value = recentData[i].sentimentValue;
+                SentimentValues[i] = value;
+            }
+        }
+
+        console.log(SentimentValues);
+        // 버그 고쳤음. reverse를 다시 안해줘서 거꾸로 나오고있었다.
+        SentimentValues = SentimentValues.reverse();
+
+        $scope.labels = ["9daysago", "8daysago", "7daysago", "6daysago", "5daysago", "4daysago", "3daysago", "2daysago", "1daysago", "Today"];
         $scope.series = ['facebook', 'twitter', 'ellenradio'];
         $scope.data = [
-            SentimentValues,
-            [5, 2, -1, -3, 4, -4, -3],
-            [10, -8, 4, -5, 2, 8, 10]
+            [-15, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [+15, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            SentimentValues
         ];
         $scope.onClick = function (points, evt) {
             console.log(points, evt);

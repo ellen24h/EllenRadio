@@ -1,3 +1,4 @@
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -12,7 +13,8 @@ var engine = require('ejs-locals');
 
 var mongoose = require('mongoose');
 
-var db = require('./app/models/db');
+var db = require('./config/db');
+//require('./config/passport')(passport);
 
 var app = express();
 
@@ -24,7 +26,7 @@ app.set('views', path.join(__dirname, 'app/views')); //이거 안해서 진짜 �
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-app.post('/sentiment', function(req,res){
+app.post('/sentiment', function(req, res){
     console.log(req.body);
 });
 
@@ -35,6 +37,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/app/views')));
+
+// require for passport
+//app.use(session({ secret: 'godislovegodislove' })); // session secret
+//app.use(passport.initialize());
+//app.use(passport.session()); // persistent login sessions
+//app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 // catch 404 and forward to error handler

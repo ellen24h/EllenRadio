@@ -9,7 +9,6 @@ var sentiments = require('../controllers/sentiments');
 
 
 
-
 module.exports = function (app) {
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(methodOverride(function (req, res) {

@@ -6,22 +6,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var Sentiment = mongoose.model('Sentiment');
 var sentimenter = require('sentiment')
-var utils = require('../../lib/utils');
 var extend = require('util')._extend;
-var router = express.Router();
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var sentiments = require('../controllers/sentiments');
-
-//router.use(bodyParser.urlencoded({ extended: true }))
-//router.use(methodOverride(function(req, res){
-//    if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-//        // look in urlencoded POST bodies and delete it
-//        var method = req.body._method;
-//        delete req.body._method;
-//        return method;
-//    }
-//}))
 
 
 // Error handler
@@ -40,7 +25,7 @@ var getErrorMessage = function(err) {
 /**
  * save
  */
-
+//TODO: 이런식으로 redirect해주면 새로고침효과가 나타나는데 이렇게 말고 ajax로 할 순 없을까?
 exports.create = function(req, res) {
     console.log(req.body);
     var sentiment = new Sentiment(req.body);
@@ -66,8 +51,9 @@ exports.create = function(req, res) {
             })
         }
     })
-}
+};
 
+//TODO: DB에서 json파일로 object 가져올 때 이런식으로 할 수 밖에 없나? ㅠㅠ 라우터 안통하고 하는방법 없나
 exports.list = function(req, res) {
     Sentiment.find().sort('-' +
         'created').exec(function(err, articles) {

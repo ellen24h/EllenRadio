@@ -10,14 +10,13 @@
         <!--<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>-->
         <!--<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.ocean.js"></script>        <script src="javascripts/shared/angular-fusioncharts.js"></script>-->
         <script src="/javascripts/apple.js"></script>
-        <script type="text/javascript" src="/javascripts/controllers/InputController.js"></script>
-        <script type="text/javascript" src="/javascripts/controllers/ChartController.js"></script>
+
         <script src="/bower_components/Chart.js/Chart.min.js"></script>
         <script src="/bower_components/angular-chart.js/dist/angular-chart.js"></script>
     </head>
     <body ng-app="UlivearthApp">
         <video autoplay loop poster="resources/ulivearth.png" id="bgvid">
-            <source src="resources/ulivearth.mp4" type="video/mp4">
+            <source src="resources/ulivearth_low.mp4" type="video/mp4">
         </video>
         <div style="visibility:hidden; position:fixed;">
             <iframe scrolling="no" frameborder="no"
@@ -35,7 +34,8 @@
         <!-- services-->
         <script src="/javascripts/services/sentimentvalues.js"></script>
         <!-- Controllers -->
-
+        <script type="text/javascript" src="/javascripts/controllers/InputController.js"></script>
+        <script type="text/javascript" src="/javascripts/controllers/ChartController.js"></script>
         <!-- Modules-->
 
     </body>

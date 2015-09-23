@@ -2,7 +2,6 @@
  * Created by Ellen
  */
 var mongoose = require('mongoose');
-//var config = require('config');
 var Schema = mongoose.Schema;
 
 
