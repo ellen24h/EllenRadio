@@ -26,6 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .center-block{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: rgba(0,0,0,0.3);
   opacity: 0.15;
   padding-top: 5em;
@@ -40,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   display: block;
   -webkit-transform: translate(-50%,-50%);
+  margin: 0 auto;
 }
 
 .center-block:hover{
