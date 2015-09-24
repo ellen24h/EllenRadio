@@ -11,7 +11,7 @@ app.config(function($routeProvider, ChartJsProvider){
             templateUrl: '/directives/input.html'
         })
         .when('/analysis', {
-            controller: "ChartController",
+            controller: "analysisController",
             templateUrl: '/directives/analysis.html'
         })
         .otherwise({

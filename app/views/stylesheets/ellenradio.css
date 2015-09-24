@@ -1,0 +1,178 @@
+html {
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-size: 1em;
+    height: 100%;
+}
+
+body {
+    background-color: #dbc59e;
+    height: 100%;
+}
+
+/*video#bgvid {*/
+    /*position: fixed;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*min-width: 100%;*/
+    /*min-height: 100%;*/
+    /*width: auto;*/
+    /*height: auto;*/
+    /*z-index: -100;*/
+    /*-webkit-transform: translateX(-50%) translateY(-50%);*/
+    /*transform: translateX(-50%) translateY(-50%);*/
+    /*background: url(ulivearth.png) no-repeat;*/
+    /*background-size: cover;*/
+/*}*/
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+.center-container{
+    height: 100%;
+}
+
+.center-block{
+    padding-top: 5em;
+    padding-bottom: 5em;
+    position: fixed;
+    min-width: 700px;
+    width: 50%;
+    color: darkslategray;
+    vertical-align: middle;
+    text-align: center;
+    display: block;
+    -webkit-transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+}
+
+/*.center-block:hover{*/
+    /*opacity: 1;*/
+/*}*/
+
+h1 {
+    font-size: 2.5em; /* 80px; */
+    line-height: 1em; /* 80px; */
+    margin: 0.5em;
+    color: dimgrey;
+}
+
+.question {
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0.3em;
+    color: slategray;
+}
+
+.sentiment_input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: slategray;
+    color: darkslategrey;
+    border-bottom-width: 1px;
+    width: 20em;
+    background-color: transparent;
+    font-size: 1.5em;
+    cursor: auto;
+    text-rendering: auto;
+    text-align: center;
+    font-family: inherit;
+}
+
+.sentiment_submit {
+    margin-top: 1em;
+    opacity: 1;
+    margin-left: 0.5em;
+    background-color: transparent;
+    border: 3px solid darksalmon;
+
+    /*border-radius: 20px;*/
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 7em;
+    padding: none;
+    color: darksalmon;
+
+}
+
+.channels {
+    font-size: 1.5em;
+    color: white;
+}
+
+.channel-wrapper {
+    left: 50%;
+    border: 3px solid darksalmon;
+    height: 2.5em;
+    width: 8em;
+    background-color: transparent;
+    margin-left: 40%;
+}
+.channel {
+    font-size: 1.5em;
+    text-decoration: none;
+    cursor: pointer;
+    color: darksalmon;
+    line-height: 2;
+    vertical-align: middle;
+}
+
+.ulivearth {
+    margin-top: 50px;
+    width: 30px;
+    height: 30px;
+    margin-right: 150px;
+    float: right;
+    background-color: midnightblue;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.oldiscool {
+    float: right;
+    margin-top: 50px;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: lightgrey;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.chart {
+    float: right;
+    margin-top: 50px;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: darksalmon;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.ulivearth:hover{
+    opacity: 1;
+}
+.oldiscool:hover{
+    opacity: 1;
+}
+.chart:hover{
+    opacity: 1;
+}
+
+span {
+    font-size: 1em;
+}
+
+.error {
+    color : red;
+}
+
+.valid {
+    color: green;
+}
+
+.pristine {
+    color: cadetblue;
+}

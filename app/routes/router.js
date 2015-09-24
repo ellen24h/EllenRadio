@@ -24,7 +24,7 @@ module.exports = function (app) {
     app.route('/')
         .get(function (req, res) {
             //console.log("router"); for bug잡기....ㅠㅠ 여기에 몇시간을 썼는지 모르겠다...
-            res.render('index.html');
+            res.render('ellenradio.html');
         });
 
     app.route('/sentiment')

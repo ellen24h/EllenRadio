@@ -1,4 +1,5 @@
-<h1> {{ appname }}</h1>
+<!--<h1> {{ appname }}</h1>-->
+<h1> Good Afternoon, Ellen </h1>
 <p class = "question"> {{ question1 }} </p>
 <form method = "POST" action = "/sentiment" name="sentiment_input">
     <input class = "sentiment_input"
@@ -41,7 +42,7 @@
            type="text"
            ng-model="sentiment"
            ng-minlength="10"
-           ng-maxlength="50"
+           ng-maxlength="100"
            placeholder="ex) I am very happy!"
            onfocus="this.placeholder=''"
            onblur="this.placeholder = ''"
@@ -55,7 +56,7 @@
                       ng-show= "sentiment_input.sentiment.$error.required">
                     I want to hear you :)
                 </span>
-        <!--minlength check가 안된다. 정말 도무지 이유를 모르겠다. -->
+        <!--minlength check가 안된다. 정말 도무지 이유를 모르겠다. : 해결. 라이브러리 최선으로 업뎃안해서 -->
                 <span class = "error"
                       ng-show= "sentiment_input.sentiment.$error.minlength">
                     Tell me more :)
@@ -67,10 +68,10 @@
     </div>
     <div class = "valid">
                 <span class = "valid" ng-show="sentiment_input.sentiment.$valid">
-                    Thanks. Can I remember it?
+                    Thanks. Antena will give you right channel!
                 </span>
     </div>
     <input class = "sentiment_submit"
            ng-disabled="sentiment_input.sentiment.$invalid"
-           type="submit" value="remember"/>
+           type="submit" value="Antena"/>
 </form>

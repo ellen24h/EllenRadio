@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> :: Ellen Radio :: </title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/ellenradio.css">
+        <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="/javascripts/apple.js"></script>
+        <script src="/bower_components/Chart.js/Chart.min.js"></script>
+        <script src="/bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    </head>
+    <body ng-app="UlivearthApp">
+        <!--<video autoplay loop poster="resources/ulivearth.png" id="bgvid">-->
+            <!--<source src="resources/ulivearth_low.mp4" type="video/mp4">-->
+        <!--</video>-->
+        <!--<div style="visibility:hidden; position:fixed;">-->
+            <!--<iframe scrolling="no" frameborder="no"-->
+                    <!--src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/144427195&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>-->
+        <!--</div>-->
+        <div class = "center-container">
+            <!--<img src="resources/ellenseon.png" height="400px" width="auto"  top="50%" >-->
+            <div class= "center-block">
+                <div>
+                    <img src="resources/hertz.png" width="500px" height="auto">
+                    <div ng-view></div>
+                </div>
+                <div class = "channels">
+                    <div class = "ulivearth" onclick="location.href='http://ulivearth.ellenseon.net';"></div>
+                    <div class = "oldiscool" onclick="location.href='http://oldiscool.ellenseon.net';"></div>
+                    <div class = "chart" onclick="location.href='http://ellenseon.net/#/analysis';"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- services-->
+        <script src="/javascripts/services/sentimentValues.js"></script>
+        <!-- Controllers -->
+        <script type="text/javascript" src="/javascripts/controllers/InputController.js"></script>
+        <script type="text/javascript" src="/javascripts/controllers/AnalysisController.js"></script>
+        <!-- Modules-->
+    </body>
+
+</html>

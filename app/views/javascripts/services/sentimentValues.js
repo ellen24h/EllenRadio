@@ -1,9 +1,10 @@
 /**
- * Created by Ellen on 2015. 9. 23..
+ * Created by Ellen on
  */
 
 app.factory('sentimentValues', ['$http', function($http) {
     return $http.get('http://ellenseon.net/sentimentValues')
+    //return $http.get('http://localhost:2367/sentimentValues')
         .success(function(data) {
             return data;
         })
