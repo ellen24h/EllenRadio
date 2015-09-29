@@ -36,7 +36,7 @@ app.controller('analysisController', ['$scope', 'sentimentValues', function ($sc
         $scope.onClick = function (points, evt) {
             console.log(points, evt);
         };
-        if (SentimentValues[6] <= 0) {
+        if (SentimentValues[9] <= 0) {
             $scope.channel = "http://ulivearth.ellenseon.net";
         }
         else
